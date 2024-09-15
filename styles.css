@@ -11,8 +11,9 @@ html {
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+
+  grid-template-columns: 1, 2, 3, 4, 5, 6, 7, 8;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.719); /* Transparent background */
   padding: 20px;
@@ -26,71 +27,122 @@ html {
 
 .logo img {
   height: 80px; /* Adjust logo size */
+  grid-column: 1;
 }
-
+.nav-menu {
+  text-align: center;
+  grid-row: 1;
+  grid-column-end: 40;
+}
 .nav-menu ul {
   list-style: none;
-  display: flex;
+  display: inline-flex;
   gap: 20px;
 }
 
 .nav-menu ul li a {
   text-decoration: none;
   color: white;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  padding-right: 45px;
+.search-container {
+  grid-column-end: 24;
+  display: inline-flex;
+  background-color: #ffffff8a;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 550px;
 }
 
-.search-bar input {
-  padding: 5px;
-  border-radius: 3px;
+.search-container input[type="text"] {
   border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+  font-size: 19px;
+  background-color: #ffffff00;
 }
 
-.search-bar a {
-  margin-left: 10px;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-.search-bar button {
-  padding: 6px 12px;
-  background-color: #007bff00;
+.search-container button {
+  background-color: #0961a8;
   color: white;
   border: none;
-  border-radius: 3px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 10px;
   cursor: pointer;
-}
-.search-bar img {
-  height: 25px;
-}
-.search-bar img:hover {
-  color: rgb(116, 116, 116);
+  font-size: 19px;
 }
 
+.search-container button:hover {
+  background-color: #0c3a1f;
+}
+
+.clear-btn {
+  grid-column-end: 8;
+  background-color: #0961a8;
+}
 .hero {
   height: 80vh;
   width: 100%;
   overflow: hidden;
+  background-color: #0e110fd8;
 }
-
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.input-container {
-  width: 250px;
-  height: 45px;
-  background-color: #ffffffe1;
-  color: rgb(55, 92, 55);
-  font-size: large;
+.mySlides {
+  display: none;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  margin-top: -12px;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
 }
