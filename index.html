@@ -1,40 +1,45 @@
 <!DOCTYPE html>
-<html>
-<body>
-    <head>
-        <meta charset="UTF-8" />
-        <title>WhereToNext</title>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
-            </style>
-        <link rel="stylesheet" href="./style.css" />
-      </head>
-      <body>
-        <header class="slide">
-          
-        <nav>
-                <a  href="./index.html"><img src="./images/icon.png"></a>
-                <div class="navBar">
-          <ul>
-            <li><a href="./index.html" id="home">Home </a></li>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhereToNext</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html"
+          ><img src="images/icon.png" alt="WhereToNext Logo"
+        /></a>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <input
+          class="input-container"
+          type="text"
+          placeholder="Enter a destination or keyword"
+        />
+        <button>
+          <a><img src="images/search.png" alt="Search" /></a>
+        </button>
+      </div>
+    </header>
 
-            <li><a href="" id="about">About Us </a></li>
-
-            <li><a href="" id="contact">Contact Us </a></li>
-
-            <li><input
-                type="text"
-                id="destionationInput"
-                placeholder="Enter a destionation or keyword"/>
-            </li>
-
-            <li><button id="btnSearch">Search</button></li>
-          </ul>
-        </div>
-        </nav>
-
-        </header>
-        
-<script src="./script.js"></script>
-</body>
-</html> 
+    <div class="hero">
+      <img src="/images/background.jpg" alt="Mountain Lake" />
+    </div>
+  </body>
+</html>
