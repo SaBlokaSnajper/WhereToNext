@@ -48,7 +48,7 @@ body {
 .nav-menu ul li a {
   text-decoration: none;
   color: white;
-  font-size: 24px;
+  font-size: 22px;
   padding-inline: 8px;
   font-weight: bold;
 }
@@ -71,10 +71,11 @@ body {
   color: #144670;
 }
 .search-container {
-  grid-column-end: 24;
+  grid-column-end: 25;
   display: inline-flex;
   background-color: #ffffff8a;
   padding: 10px;
+  margin-bottom: 12px;
   border-radius: 25px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   width: 550px;
@@ -133,7 +134,7 @@ body {
   height: 120vh;
   width: 100%;
   position: relative;
-  overflow: hidden;
+
   background-image: linear-gradient(
     to left,
     rgba(245, 246, 252, 0.356),
@@ -225,11 +226,47 @@ body {
   position: absolute;
   top: 20%;
   left: 15%;
-  transform: translate(-50%, -50%); /* Adjust for proper centering */
+  transform: translate(-50%, -50%);
   color: white;
   text-align: left;
   background-color: rgba(0, 0, 0, 0);
   padding: 20px;
   border-radius: 10px;
   font-size: 70px;
+}
+
+#result {
+  position: absolute;
+  top: 48%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0px;
+  border-radius: 10px;
+  font-size: 24px;
+  width: 900px;
+  height: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-top: -10px;
+}
+
+.visit {
+  background-color: #0961a8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.visit:hover {
+  background-color: #144670;
+}
+
+#cityimg {
+  height: 300px;
 }
