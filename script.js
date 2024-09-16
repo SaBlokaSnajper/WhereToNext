@@ -1,5 +1,6 @@
-let slideIndex = 2;
+let slideIndex = 1;
 showSlides(slideIndex);
+autoSlides();
 
 // Next/previous controls
 function plusSlides(n) {
@@ -31,7 +32,7 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
-function showSlides() {
+function autoSlides() {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   for (i = 0; i < slides.length; i++) {
@@ -42,5 +43,5 @@ function showSlides() {
     slideIndex = 1;
   }
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 7000);
+  setTimeout(autoSlides, 8000);
 }

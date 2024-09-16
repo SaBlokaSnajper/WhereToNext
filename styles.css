@@ -9,10 +9,11 @@ html {
   font-family: "Sora", sans-serif;
   height: 100%;
 }
-
+body {
+  overflow: hidden;
+}
 .header {
   display: grid;
-
   grid-template-columns: 1, 2, 3, 4, 5, 6, 7, 8;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.719); /* Transparent background */
@@ -23,16 +24,20 @@ html {
   left: 0;
   z-index: 10;
   color: white;
+  padding-top: 35px;
 }
 
 .logo img {
-  height: 80px; /* Adjust logo size */
+  height: 65px; /* Adjust logo size */
   grid-column: 1;
 }
 .nav-menu {
   text-align: center;
   grid-row: 1;
   grid-column-end: 40;
+}
+.nav-menu a:hover {
+  color: #0961a8;
 }
 .nav-menu ul {
   list-style: none;
@@ -43,7 +48,8 @@ html {
 .nav-menu ul li a {
   text-decoration: none;
   color: white;
-  font-size: 28px;
+  font-size: 24px;
+  padding-inline: 8px;
   font-weight: bold;
 }
 .search-container {
@@ -62,7 +68,7 @@ html {
   padding: 10px;
   border-radius: 20px;
   outline: none;
-  font-size: 19px;
+  font-size: 16px;
   background-color: #ffffff00;
 }
 
@@ -74,27 +80,73 @@ html {
   margin-left: 10px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 19px;
+  font-size: 16px;
 }
 
 .search-container button:hover {
-  background-color: #0c3a1f;
+  background-color: #144670;
 }
 
 .clear-btn {
   grid-column-end: 8;
   background-color: #0961a8;
 }
+.hero-text {
+  position: absolute;
+  top: 45%; /* Vertically center the text */
+  left: 15%; /* Horizontally center the text */
+  transform: translate(-50%, -50%); /* Adjust for proper centering */
+  color: white;
+  text-align: left;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0
+  ); /* Optional: Add background for readability */
+  padding: 20px;
+  border-radius: 10px; /* Optional: Rounded corners */
+  font-size: xx-large;
+}
+.hero-p {
+  margin-top: 60px;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 1%;
+  color: #ffffff;
+}
 .hero {
-  height: 80vh;
+  height: 120vh;
   width: 100%;
+  position: relative;
   overflow: hidden;
-  background-color: #0e110fd8;
+  background-image: linear-gradient(
+    to left,
+    rgba(245, 246, 252, 0.356),
+    #0961a8
+  );
 }
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.book {
+  font-family: "Sora", sans-serif;
+  background-color: #1265a8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 15px;
+}
+.book:hover {
+  background-color: #144670;
 }
 
 .mySlides {
@@ -104,7 +156,7 @@ html {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 45%;
   width: auto;
   margin-top: -12px;
   padding: 12px;
@@ -127,20 +179,26 @@ html {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: background-color 5s ease;
 }
+.alldots {
+  display: none;
+}
+.prev:hover,
+.next:hover,
 .active,
 .dot:hover {
-  background-color: #717171;
-}
-.fade {
-  animation-name: fade;
-  animation-duration: 3s;
+  color: #717171;
 }
 
-@keyframes fade {
+.fadein {
+  animation-name: fade-in;
+  animation-duration: 4s;
+}
+
+@keyframes fade-in {
   from {
-    opacity: 0.1;
+    opacity: 0.6;
   }
   to {
     opacity: 1;
