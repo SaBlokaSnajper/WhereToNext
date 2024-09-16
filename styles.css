@@ -52,6 +52,24 @@ body {
   padding-inline: 8px;
   font-weight: bold;
 }
+#home {
+  color: #1265a8;
+}
+#home:hover {
+  color: #144670;
+}
+#contacts {
+  color: #1265a8;
+}
+#contacts:hover {
+  color: #144670;
+}
+#about {
+  color: #1265a8;
+}
+#about:hover {
+  color: #144670;
+}
 .search-container {
   grid-column-end: 24;
   display: inline-flex;
@@ -93,21 +111,17 @@ body {
 }
 .hero-text {
   position: absolute;
-  top: 45%; /* Vertically center the text */
-  left: 15%; /* Horizontally center the text */
+  top: 45%;
+  left: 15%;
   transform: translate(-50%, -50%); /* Adjust for proper centering */
   color: white;
   text-align: left;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0
-  ); /* Optional: Add background for readability */
+  background-color: rgba(0, 0, 0, 0);
   padding: 20px;
-  border-radius: 10px; /* Optional: Rounded corners */
+  border-radius: 10px;
   font-size: xx-large;
 }
+
 .hero-p {
   margin-top: 60px;
   font-size: 18px;
@@ -203,4 +217,19 @@ body {
   to {
     opacity: 1;
   }
+}
+
+/*About us page*/
+
+.page-title {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  transform: translate(-50%, -50%); /* Adjust for proper centering */
+  color: white;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 70px;
 }
