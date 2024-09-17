@@ -47,6 +47,7 @@ function autoSlides() {
 }
 document.addEventListener("DOMContentLoaded", function () {
   const btnSearch = document.getElementById("search-btn");
+  const bookSearch = document.getElementById("book");
   const btnClear = document.getElementById("clear-btn");
   const inputSrc = document.getElementById("destinationInput");
   function searchDestination() {
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .value.toLowerCase();
     const resultDiv = document.getElementById("result");
 
-    resultDiv.style.backgroundColor = "white";
+    //resultDiv.style.backgroundColor = "white";
     resultDiv.innerHTML = "";
 
     console.log("Searching for:", input);
@@ -71,20 +72,50 @@ document.addEventListener("DOMContentLoaded", function () {
         let found = false;
 
         data.countries.forEach((country) => {
-          const city = country.cities.find((city) =>
-            city.name.toLowerCase().includes(input)
-          );
+          let countryMatch = false;
 
-          if (city) {
+          // Check if the input matches the country name
+          if (country.name.toLowerCase().includes(input)) {
+            countryMatch = true;
             found = true;
-            console.log("City found:", city);
-            resultDiv.innerHTML += `<img id="cityimg" src="${city.imageUrl}" alt="Image of ${city.name}" />`;
-            resultDiv.innerHTML += `<h2><strong>${city.name}</strong></h2>`;
-            resultDiv.innerHTML += `<p><strong>Description:</strong> ${city.description}</p>`;
-            resultDiv.innerHTML += `<br><button class="visit">Visit</button><br>`;
-            resultDiv.innerHTML += `<br>`;
+            console.log("Country found:", country); // Debugging log
+
+            // Display all cities of the matched country
+            country.cities.forEach((city) => {
+              resultDiv.innerHTML += `<div id=resultbox><img id="cityimg" src="${city.imageUrl}" alt="Image of ${city.name}" /><br> <h2><strong>${city.name}</strong></h2>
+              <br><p><strong>Description:</strong> ${city.description}</p><br> <br><button class="visit">Visit</button><br></div>`;
+            });
+          }
+
+          // Only check city names if no country match was found
+          if (!countryMatch) {
+            country.cities.forEach((city) => {
+              if (city.name.toLowerCase().includes(input)) {
+                found = true;
+                console.log("City found:", city); // Debugging log
+                resultDiv.innerHTML += `<div id=resultbox><img id="cityimg" src="${city.imageUrl}" alt="Image of ${city.name}" /><br> <h2><strong>${city.name}</strong></h2>
+                <br><p><strong>Description:</strong> ${city.description}</p><br> <br><button class="visit">Visit</button><br></div>`;
+              }
+            });
           }
         });
+        //data.cities.forEach((city) => {
+        //const city = city.cities.find((city) =>
+        //city.name.toLowerCase().includes(input)
+        //);
+
+        //if (city) {
+        //found = true;
+        //console.log("City found:", city);
+        //resultDiv.innerHTML += `<img id="cityimg" src="${city.imageUrl}" alt="Image of ${city.name}" />`;
+        // resultDiv.innerHTML += `<h2><strong>${city.name}</strong></h2>`;
+        // resultDiv.innerHTML += `<p><strong>Description:</strong> ${city.description}</p>`;
+        // resultDiv.innerHTML += `<br><button id="visit">Visit</button><br>`;
+        //resultDiv.innerHTML += `<br>`;
+        //resultDiv.innerHTML += `<div id=resultbox><img id="cityimg" src="${city.imageUrl}" alt="Image of ${city.name}" /><br> <h2><strong>${city.name}</strong></h2>
+        //<br><p><strong>Description:</strong> ${city.description}</p><br> <br><button class="visit">Visit</button><br></div>`;
+        //}
+        //});
 
         if (
           input.includes("temple") ||
@@ -94,11 +125,13 @@ document.addEventListener("DOMContentLoaded", function () {
           data.temples.forEach((temple) => {
             found = true;
             console.log("Temple found:", temple);
-            resultDiv.innerHTML += `<img class="cityimg" src="${temple.imageUrl}" alt="Image of ${temple.name}" />`;
-            resultDiv.innerHTML += `<h2><strong>${temple.name}</strong></h2>`;
-            resultDiv.innerHTML += `<p><strong>Description:</strong> ${temple.description}</p>`;
-            resultDiv.innerHTML += `<br><button class="visit">Visit</button><br>`;
-            resultDiv.innerHTML += `<br>`;
+            //resultDiv.innerHTML += `<img id="cityimg" src="${temple.imageUrl}" alt="Image of ${temple.name}" />`;
+            //resultDiv.innerHTML += `<h2><strong>${temple.name}</strong></h2>`;
+            //resultDiv.innerHTML += `<p><strong>Description:</strong> ${temple.description}</p>`;
+            //resultDiv.innerHTML += `<br><button class="visit">Visit</button><br>`;
+            //resultDiv.innerHTML += `<br>`;
+            resultDiv.innerHTML += `<div id=resultbox><img id="cityimg" src="${temple.imageUrl}" alt="Image of ${temple.name}" /><br> <h2><strong>${temple.name}</strong></h2>
+             <br><p><strong>Description:</strong> ${temple.description}</p><br> <br><button class="visit">Visit</button><br></div>`;
           });
         }
 
@@ -110,11 +143,13 @@ document.addEventListener("DOMContentLoaded", function () {
           data.beaches.forEach((beach) => {
             found = true;
             console.log("Beach found:", beach); // Debugging log
-            resultDiv.innerHTML += `<img id="cityimg" src="${beach.imageUrl}" alt="Image of ${beach.name}" />`;
-            resultDiv.innerHTML += `<h2><strong>${beach.name}</strong></h2>`;
-            resultDiv.innerHTML += `<p><strong>Description:</strong> ${beach.description}</p>`;
-            resultDiv.innerHTML += `<br><button class="visit">Visit</button><br>`;
-            resultDiv.innerHTML += `<br>`;
+            //resultDiv.innerHTML += `<img id="cityimg" src="${beach.imageUrl}" alt="Image of ${beach.name}" />`;
+            // resultDiv.innerHTML += `<h2><strong>${beach.name}</strong></h2>`;
+            // resultDiv.innerHTML += `<p><strong>Description:</strong> ${beach.description}</p>`;
+            //resultDiv.innerHTML += `<br><button class="visit">Visit</button><br>`;
+            //resultDiv.innerHTML += `<br>`;
+            resultDiv.innerHTML += `<div id=resultbox><img id="cityimg" src="${beach.imageUrl}" alt="Image of ${beach.name}" /><br> <h2><strong>${beach.name}</strong></h2>
+             <br><p><strong>Description:</strong> ${beach.description}</p><br> <br><button class="visit">Visit</button><br></div>`;
           });
         }
 
@@ -132,6 +167,12 @@ document.addEventListener("DOMContentLoaded", function () {
   btnSearch.addEventListener("click", () => {
     searchDestination();
     document.getElementById("hero").style.backgroundColor = "black";
+    document.getElementById("top-pad").style.display = "flex";
+  });
+  bookSearch.addEventListener("click", () => {
+    searchDestination();
+    document.getElementById("hero").style.backgroundColor = "black";
+    document.getElementById("top-pad").style.display = "flex";
   });
 
   inputSrc.addEventListener("keypress", (event) => {
@@ -144,5 +185,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("destinationInput").value = "";
     document.getElementById("result").innerHTML = "";
     document.getElementById("result").style.backgroundColor = "";
+    document.getElementById("top-pad").style.display = "none";
   });
 });

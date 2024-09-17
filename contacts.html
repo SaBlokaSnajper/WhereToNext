@@ -42,19 +42,42 @@
         <img src="./images/background4.jpg" alt="Mountain Lake" />
       </div>
 
-      <div class="hero-contacts">
-        <h1>
-          Journey,<br />
-          Explore, <br />
-          Discover.
-        </h1>
-        <p class="hero-c-p">
-          Let us help you create unforgettable<br />
-          memories and experiences that<br />
-          will last a lifetime.<br /><br /><br /><br />
-          Your next adventure starts here!
-        </p>
+      <div>
+        <h2 class="contact-h">Contact Us</h2>
+        <p class="contact-p">Get in touch</p>
       </div>
+
+      <form action="#" method="post" class="contact-form">
+        <label class="contact-label" for="name">Name:</label><br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required
+        /><br /><br />
+
+        <label class="contact-label" for="email">Email:</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        /><br /><br />
+
+        <label class="contact-label" for="message">Message:</label><br />
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          placeholder="Your Message"
+          required
+        ></textarea
+        ><br /><br />
+
+        <button class="submit-btn" type="submit">Submit</button>
+      </form>
 
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>

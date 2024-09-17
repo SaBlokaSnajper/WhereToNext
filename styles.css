@@ -79,6 +79,7 @@ body {
   border-radius: 25px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   width: 550px;
+  margin-left: 13px;
 }
 
 .search-container input[type="text"] {
@@ -147,7 +148,7 @@ body {
   object-fit: cover;
 }
 
-.book {
+#book {
   font-family: "Sora", sans-serif;
   background-color: #1265a8;
   color: white;
@@ -160,7 +161,7 @@ body {
   text-align: center;
   margin-top: 15px;
 }
-.book:hover {
+#book:hover {
   background-color: #144670;
 }
 
@@ -235,16 +236,61 @@ body {
   font-size: 70px;
 }
 
+.hero-a-p {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.356);
+  padding: 20px;
+  justify-content: center;
+  display: inline;
+  border-radius: 10px;
+  width: 1200px;
+  font-size: 19px;
+}
+
+.ourTeam {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.356);
+  padding: 20px;
+  justify-content: center;
+  display: flex;
+  text-align: left;
+  gap: 100px;
+  border-radius: 10px;
+  font-size: 40px;
+}
+
+.team-member {
+  background-color: #00000077;
+  padding: 15px;
+  border-radius: 10%;
+  font-size: 25px;
+  gap: 30px;
+  justify-content: center;
+  width: 300px;
+  text-align: center;
+}
+
+/* Result of Search*/
 #result {
   position: absolute;
-  top: 48%;
+  top: 46%;
   left: 49%;
   transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
   text-align: left;
   background-color: rgba(255, 255, 255, 0);
   padding: 0px;
-  border-radius: 10px;
+  border-radius: 2%;
   font-size: 24px;
   width: 900px;
   height: 600px;
@@ -269,4 +315,108 @@ body {
 
 #cityimg {
   height: 300px;
+  border-radius: 2%;
+}
+
+#resultbox {
+  background-color: white;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-radius: 3%;
+}
+
+#top-pad {
+  position: absolute;
+  top: 15%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 255, 34);
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 70px;
+  width: 900px;
+  height: 40px;
+  display: none;
+  background-color: #0961a8;
+}
+
+/*Contacts*/
+
+.contact-form {
+  position: absolute;
+  top: 46%;
+  left: 72%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.582);
+  padding: 20px;
+  border-radius: 2%;
+  font-size: 24px;
+  width: 900px;
+  height: auto;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-top: -10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.submit-btn {
+  font-family: "Sora", sans-serif;
+  background-color: #1265a8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  margin-left: 28px;
+  width: 800px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.contact-h {
+  position: absolute;
+  top: 36%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 20px;
+  font-size: 70px;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-top: -10px;
+}
+.contact-p {
+  position: absolute;
+  top: 43%;
+  left: 10.8%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 20px;
+  font-size: 18px;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-top: -10px;
 }
