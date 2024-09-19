@@ -75,7 +75,13 @@ document.addEventListener("DOMContentLoaded", function () {
           let countryMatch = false;
 
           // Check if the input matches the country name
-          if (country.name.toLowerCase().includes(input)) {
+          if (
+            country.name.toLowerCase().includes(input) ||
+            input.includes("country") ||
+            input.includes("countries") ||
+            input.includes("city") ||
+            input.includes("cities")
+          ) {
             countryMatch = true;
             found = true;
             console.log("Country found:", country); // Debugging log
@@ -120,7 +126,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (
           input.includes("temple") ||
           input.includes("taj") ||
-          input.includes("angkor")
+          input.includes("angkor") ||
+          input.includes("country") ||
+          input.includes("countries") ||
+          input.includes("city") ||
+          input.includes("cities")
         ) {
           data.temples.forEach((temple) => {
             found = true;
@@ -138,7 +148,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (
           input.includes("beach") ||
           input.includes("bora") ||
-          input.includes("copacabana")
+          input.includes("copacabana") ||
+          input.includes("country") ||
+          input.includes("countries") ||
+          input.includes("city") ||
+          input.includes("cities")
         ) {
           data.beaches.forEach((beach) => {
             found = true;
